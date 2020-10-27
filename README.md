@@ -1,7 +1,7 @@
 # TheCodingMachine Redux-toolkit wrapper 
 
-This project is a [Redux-toolkit](https://redux-toolkit.js.org/) wrapper to write less code regarding classic CRUD operations.  
-This project is mainly used inside the [`thecodingmachine/react-native-boilerplate`](https://github.com/thecodingmachine/react-native-boilerplate) 
+This project is a [Redux-toolkit](https://redux-toolkit.js.org/) wrapper used to write less code regarding classic CRUD operations.  
+It's mainly used inside this RN Boilerplate : [`thecodingmachine/react-native-boilerplate`](https://github.com/thecodingmachine/react-native-boilerplate) 
 
 ## Installation
 
@@ -9,7 +9,7 @@ This project is mainly used inside the [`thecodingmachine/react-native-boilerpla
 yarn add @thecodingmachine/redux-toolkit-wrapper
 ```
 
-## Example
+## Usage
 ```javascript
 import { buildAction, buildReducers } from 'redux-toolkit-wrapper'
 
@@ -19,7 +19,7 @@ export default {
     error: null,
   },
   action: buildAction('example/action', () => {
-    console.log('MakeAction')
+    console.log('it is an example action')
   }),
   reducers: buildReducers(),
 }
