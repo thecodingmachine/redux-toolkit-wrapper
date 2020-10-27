@@ -1,0 +1,30 @@
+{
+  "name": "redux-toolkit-wrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodingmachine/redux-toolkit-wrapper.git"
+  },
+  "keywords": [
+    "redux",
+    "redux-toolkit",
+    "thecodingmachine",
+    "react-native",
+    "react",
+    "reactjs"
+  ],
+  "author": "TheCodingMachine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecodingmachine/redux-toolkit-wrapper/issues"
+  },
+  "homepage": "https://github.com/thecodingmachine/redux-toolkit-wrapper#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0"
+  }
+}
