@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export default (name, modules = [], moduleInitialState = {}, extraReducers = () => {}) => {
+export default (name, modules = [], moduleInitialState = {}) => {
   const initialState = modules.reduce(
     (acc, module) => ({
       ...acc,
@@ -14,12 +14,20 @@ export default (name, modules = [], moduleInitialState = {}, extraReducers = () 
     initialState,
     extraReducers: (builder) => {
       modules.forEach((module) => {
-        builder
-          .addCase(module.action.pending, module.reducers.pending)
-          .addCase(module.action.fulfilled, module.reducers.fulfilled)
-          .addCase(module.action.rejected, module.reducers.rejected)
+        // Redux toolkit createAsyncThunk automatically create the typePrefix prop
+        if (module.action.typePrefix) {
+          Object.entries(module.action).forEach(([actionName, action]) => {
+            if (typeof action === 'function') {
+              builder.addCase(
+                module.action[actionName],
+                module.reducers[actionName],
+              )
+            }
+          })
+        } else {
+          builder.addCase(module.action, module.reducers)
+        }
       })
-      extraReducers(builder)
     },
   })
 }
