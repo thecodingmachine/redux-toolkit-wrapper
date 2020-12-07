@@ -8,6 +8,7 @@
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/thecodingmachine/redux-toolkit-wrapper/latest)
 ![GitHub top language](https://img.shields.io/github/languages/top/thecodingmachine/redux-toolkit-wrapper)
 
+
 # TheCodingMachine Redux-toolkit wrapper 
 
 This project is a [Redux-toolkit](https://redux-toolkit.js.org/) wrapper used to write less code regarding classic CRUD operations.  
