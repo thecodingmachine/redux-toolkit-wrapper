@@ -1,6 +1,6 @@
 {
   "name": "@thecodingmachine/redux-toolkit-wrapper",
-  "version": "2.0.0-alpha-5",
+  "version": "2.0.0.beta.1",
   "description": "[Redux-toolkit](https://redux-toolkit.js.org/) wrapper used to write less code regarding classic CRUD operations",
   "main": "lib/index.js",
   "scripts": {
