@@ -9,6 +9,7 @@ module.exports = {
         "ecmaVersion": 12,
         "sourceType": "module",
     },
+    "ignorePatterns": ["lib/*"],
     "rules": {
         semi: ['error', 'never'],
         "comma-dangle": ["error", "always-multiline"],

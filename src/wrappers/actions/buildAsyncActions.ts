@@ -1,5 +1,5 @@
-import { Dispatch, AnyAction } from 'redux'
-import { createAsyncThunk, AsyncThunk } from '@reduxjs/toolkit'
+import { Dispatch } from 'redux'
+import { createAsyncThunk, AsyncThunk, AsyncThunkPayloadCreator } from '@reduxjs/toolkit'
 
 type AsyncThunkConfig = {
   state?: unknown
@@ -11,11 +11,10 @@ type AsyncThunkConfig = {
 
 export function buildAsyncActions<Returned, ThunkArg = void, ThunkApiConfig extends AsyncThunkConfig = {}>(
     actionName: string,
-    service: Promise<Returned>,
+    service: AsyncThunkPayloadCreator<Returned, ThunkArg, ThunkApiConfig>,
 ): AsyncThunk<Returned, ThunkArg, ThunkApiConfig> {
-  return createAsyncThunk(actionName, async (args, thunkAPI) => {
+  return createAsyncThunk( actionName, async (args, thunkAPI) => {
     try {
-      // @ts-ignore
       return await service(args, thunkAPI)
     } catch (error) {
       return thunkAPI.rejectWithValue(error)

@@ -1,18 +1,14 @@
 import { stateKeysExists, setNestedValue, stateKeyExists } from '../../utils'
-import { Reducer, AnyAction} from 'redux'
+import { AnyAction} from 'redux'
 
 interface DefaultParams {
-  itemKey: string,
-  loadingKey: string,
-  errorKey: string,
+  itemKey: string | undefined | null ,
+  loadingKey?: string,
+  errorKey?: string,
 }
 
-export function buildAsyncReducers<S> (params: DefaultParams = {
-  itemKey: 'item',
-  loadingKey: 'loading',
-  errorKey: 'error',
-}) {
-  const {itemKey, loadingKey, errorKey} = params
+export function buildAsyncReducers<S> (params: DefaultParams) {
+  const { itemKey = 'item', loadingKey = 'loading', errorKey = 'error' } = params
 
   function pending(state: S, { type }: AnyAction) {
     stateKeysExists(state, [loadingKey, errorKey], type)

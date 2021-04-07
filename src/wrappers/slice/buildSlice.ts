@@ -1,4 +1,4 @@
-import {createSlice, Slice, SliceCaseReducers, CaseReducers, CreateSliceOptions} from '@reduxjs/toolkit'
+import { createSlice, Slice, SliceCaseReducers, CreateSliceOptions} from '@reduxjs/toolkit'
 
 type Module = {
   initialState: any
@@ -9,20 +9,20 @@ type Module = {
 export function buildSlice<State, CaseReducers extends SliceCaseReducers<State>, Name extends string = string>(
     name: Name,
     modules: Module[] = [],
-    moduleInitialState: State
+    sliceInitialState: State = Object.create({})
 ): Slice<State, CaseReducers, Name> {
 
   const initialState: State = modules.reduce(
-    (acc: typeof moduleInitialState, module: Module) => ({
+    (acc: typeof sliceInitialState, module: Module) => ({
       ...acc,
       ...module.initialState,
     }),
-      moduleInitialState,
+    sliceInitialState,
   )
 
   const options: CreateSliceOptions<State, CaseReducers, Name> = {
     name,
-    initialState,
+    initialState: initialState,
     extraReducers: (builder) => {
       modules.forEach((module) => {
         // Redux toolkit createAsyncThunk automatically create the typePrefix prop

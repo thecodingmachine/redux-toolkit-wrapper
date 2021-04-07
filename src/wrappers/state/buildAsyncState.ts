@@ -1,4 +1,4 @@
-export default (scope: string) => {
+export default (scope?: string) => {
   if (scope) {
     return {
       [scope]: { loading: false, error: null },
