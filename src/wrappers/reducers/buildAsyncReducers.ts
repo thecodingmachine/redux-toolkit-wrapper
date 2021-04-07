@@ -2,7 +2,7 @@ import { stateKeysExists, setNestedValue, stateKeyExists } from '../../utils'
 import { AnyAction} from 'redux'
 
 interface DefaultParams {
-  itemKey: string | undefined | null ,
+  itemKey?: string | undefined | null ,
   loadingKey?: string,
   errorKey?: string,
 }
