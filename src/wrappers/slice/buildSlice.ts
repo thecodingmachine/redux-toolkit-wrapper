@@ -40,8 +40,7 @@ export function buildSlice<State, CaseReducers extends SliceCaseReducers<State>,
         }
       })
     },
-    // @ts-ignore
-    reducers: null,
+    reducers: Object.create({}),
   }
 
   return createSlice(options)

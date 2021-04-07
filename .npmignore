@@ -1,3 +1,8 @@
 .DS_Store
+.idea
+.babelrc
+.eslintrc.js
+.watchmanconfig
+tsconfig
 node_modules
 src

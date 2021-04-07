@@ -2,12 +2,13 @@
     <img src="logo.png" alt="Logo" width="100%">
 </div>
 
-![GitHub Release Date](https://img.shields.io/github/release-date/thecodingmachine/redux-toolkit-wrapper)
-![GitHub last commit](https://img.shields.io/github/last-commit/thecodingmachine/redux-toolkit-wrapper)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/thecodingmachine/redux-toolkit-wrapper)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/thecodingmachine/redux-toolkit-wrapper/latest)
-![GitHub top language](https://img.shields.io/github/languages/top/thecodingmachine/redux-toolkit-wrapper)
-
+![Redux Toolkit Wrapper License](https://img.shields.io/github/license/thecodingmachine/redux-toolkit-wrapper)
+![Redux Toolkit Wrapper Version](https://flat.badgen.net/npm/v/@thecodingmachine/redux-toolkit-wrapper)
+![Redux Toolkit Wrapper Release Date](https://img.shields.io/github/release-date/thecodingmachine/redux-toolkit-wrapper)
+![Redux Toolkit Wrapper Download](https://flat.badgen.net/npm/dt/@thecodingmachine/redux-toolkit-wrapper)
+![Redux Toolkit Wrapper Stars](https://img.shields.io/github/stars/thecodingmachine/redux-toolkit-wrapper)
+![Redux Toolkit Wrapper Top Language](https://img.shields.io/github/languages/top/thecodingmachine/redux-toolkit-wrapper)
+![Redux Toolkit Wrapper TypeScript](https://badgen.net/npm/types/tslib)
 
 # TheCodingMachine Redux-toolkit wrapper 
 
