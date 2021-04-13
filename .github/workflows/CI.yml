@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - '*'
+
+jobs:
+  install-lint-typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install yarn dependencies
+        run: |
+          yarn install
+      - name: Run linters
+        run: |
+          yarn lint
+      - name: Run type check
+        run: |
+          yarn type-check
