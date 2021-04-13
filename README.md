@@ -23,21 +23,23 @@ yarn add @thecodingmachine/redux-toolkit-wrapper
 
 ## Usage
 ```javascript
-import { buildAction, buildReducers } from 'redux-toolkit-wrapper'
+import {
+  buildAsyncState,
+  buildAsyncReducers,
+  buildAsyncActions,
+} from '@thecodingmachine/redux-toolkit-wrapper'
+import fetchOneUserService from '@/Services/User/FetchOne'
 
 export default {
-  initialState: {
-    loading: false, 
-    error: null,
-  },
-  action: buildAction('example/action', () => {
-    console.log('it is an example action')
+  initialState: buildAsyncState('fetchOne'),
+  action: buildAsyncActions('user/fetchOne', fetchOneUserService),
+  reducers: buildAsyncReducers({
+    errorKey: 'fetchOne.error', // Optionally, if you scoped variables, you can use a key with dot notation
+    loadingKey: 'fetchOne.loading',
   }),
-  reducers: buildReducers(),
 }
 ```
 More information on [the dedicated documentation](https://thecodingmachine.github.io/react-native-boilerplate/docs/AddAStore#redux-toolkit-wrapper)
-
 
 ## License
 
