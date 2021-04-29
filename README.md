@@ -22,21 +22,42 @@ yarn add @thecodingmachine/redux-toolkit-wrapper
 ```
 
 ## Usage
-```javascript
-import {
-  buildAsyncState,
-  buildAsyncReducers,
-  buildAsyncActions,
-} from '@thecodingmachine/redux-toolkit-wrapper'
-import fetchOneUserService from '@/Services/User/FetchOne'
 
-export default {
-  initialState: buildAsyncState('fetchOne'),
-  action: buildAsyncActions('user/fetchOne', fetchOneUserService),
-  reducers: buildAsyncReducers({
-    errorKey: 'fetchOne.error', // Optionally, if you scoped variables, you can use a key with dot notation
-    loadingKey: 'fetchOne.loading',
-  }),
+fetchOne
+```typescript
+import { buildAsyncSliceModule } from '@thecodingmachine/redux-toolkit-wrapper'
+import { fetchOneUserService } from '@/Services/User'
+
+export default buildAsyncSliceModule({
+  actionName: 'fetchOne',
+  service: fetchOneUserService,
+})
+```
+
+user slice
+```typescript
+import { buildSlice } from '@thecodingmachine/redux-toolkit-wrapper'
+import fetchOneModule from './fetchOne'
+
+// This state is common to all the "user" module, and can be modified by any "user" reducers
+const sliceInitialState = {
+    item: {},
+}
+
+export const { reducer, fetchOneAction, ...args } = buildSlice(
+    'user',
+    [fetchOneModule],
+    sliceInitialState,
+)
+
+export interface UserState {
+    item: {
+        name: string
+    }
+    fetchOne: {
+        loading: boolean
+        error: any
+    }
 }
 ```
 More information on [the dedicated documentation](https://thecodingmachine.github.io/react-native-boilerplate/docs/AddAStore#redux-toolkit-wrapper)
