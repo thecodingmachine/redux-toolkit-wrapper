@@ -1,4 +1,5 @@
 export * from './actions'
+export * from './asyncModule'
 export * from './reducers'
 export * from './slice'
 export * from './state'
