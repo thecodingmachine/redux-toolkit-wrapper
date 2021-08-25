@@ -39,7 +39,7 @@ export default {
   }),
 }
 ```
-More information on [the dedicated documentation](https://thecodingmachine.github.io/react-native-boilerplate/docs/AddAStore#redux-toolkit-wrapper)
+More information on [the dedicated documentation](https://thecodingmachine.github.io/react-native-boilerplate/docs/ReduxStore/)
 
 ## License
 
